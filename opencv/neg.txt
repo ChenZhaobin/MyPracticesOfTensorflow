@@ -1,0 +1,12 @@
+data/eyeglasses_detect/eyeglasses_neg/2.jpg
+data/eyeglasses_detect/eyeglasses_neg/11.jpg
+data/eyeglasses_detect/eyeglasses_neg/1.jpg
+data/eyeglasses_detect/eyeglasses_neg/5.jpg
+data/eyeglasses_detect/eyeglasses_neg/10.jpg
+data/eyeglasses_detect/eyeglasses_neg/9.jpg
+data/eyeglasses_detect/eyeglasses_neg/6.jpg
+data/eyeglasses_detect/eyeglasses_neg/3.jpg
+data/eyeglasses_detect/eyeglasses_neg/4.jpg
+data/eyeglasses_detect/eyeglasses_neg/7.jpg
+data/eyeglasses_detect/eyeglasses_neg/8.jpg
+data/eyeglasses_detect/eyeglasses_neg/12.jpg
