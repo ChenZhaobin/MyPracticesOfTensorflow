@@ -1,4 +1,4 @@
-tensorflow sources:
+tensorflow resources:
 
 tensorflow concepts:
 
