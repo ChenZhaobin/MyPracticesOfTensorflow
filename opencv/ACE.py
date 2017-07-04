@@ -70,13 +70,12 @@ def intervalSampling(I,interval): #等间距抽样
         I[np.ix_(nh, nw)]=smallImg
     return  I
 if __name__ == '__main__':
-        time1=time.time()
-        image=cv2.imread("data/6.jpg")
-        height, width = image.shape[:2]
-        image= image+ zmIce(image/ 255.0) * 255
-        cv2.imwrite("data/66_result.jpg",image)
-        time2=time.time()
-        print("用时："+str(time2-time1))
+
+    image=cv2.imread("data/20170626133701.jpg")
+    height, width = image.shape[:2]
+    image=zmIceColor(image/ 255.0) * 255
+    cv2.imwrite("data/20170626133701_result.jpg",image)
+
     # print(sys.argv[0])
     # image=cv2.imread(sys.argv[1])
     # height, width = image.shape[:2]
