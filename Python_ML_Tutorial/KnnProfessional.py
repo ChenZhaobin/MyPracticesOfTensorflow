@@ -23,7 +23,7 @@
 4.3 思考多线程变量共享的问题【留到决策树章节去实现】
 """
 from Python_ML_Tutorial.KnnModel import *
-
+from numpy import *
 
 def create_sample():
     """
@@ -55,6 +55,16 @@ def core_training(training_set, training_labels, count_neighbor):
     return result_model
 
 
+def auto_norm(origin_dataset):
+    min_vals = origin_dataset.min(0)
+    max_vals = origin_dataset.max(0)
+    ranges = max_vals-min_vals
+    norm_dataset = np.zeros(np.shape(origin_dataset))  # 该变量初始化没什么意义，并没有用到
+    m = origin_dataset.shape[0]
+    norm_dataset = origin_dataset - np.tile(min_vals, (m, 1))
+    norm_dataset = norm_dataset*(np.tile(ranges, (m, 1))**(-1))
+    return norm_dataset, ranges, min_vals
+
 def predict(model_knn, feature_vector_input):
     """
 
@@ -68,6 +78,7 @@ def predict(model_knn, feature_vector_input):
 
 if __name__ == "__main__":
     sample_set, sample_labels = create_sample()
+    print(auto_norm(sample_set))
     k = 3
     knnPreModel = core_training(sample_set, sample_labels, k)
     testX = np.array([0.1, 0.3])
