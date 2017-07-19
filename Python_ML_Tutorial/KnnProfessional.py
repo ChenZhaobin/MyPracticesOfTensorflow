@@ -1,5 +1,4 @@
 """
-
 第一节课  初步认识KNN算法：
 1.1 理论部分讲解
 1.2 编写最简单的kNN代码
@@ -27,27 +26,50 @@ from Python_ML_Tutorial.KnnModel import *
 
 
 def create_sample():
+    """
+    将文件中的数据转换成python可以处理的矩阵形式
+    :return:
+    """
     features = np.array([[1.0, 0.9], [1.0, 1.0], [0.1, 0.2], [0.0, 0.1]])
     labels = ['A', 'A', 'B', 'B']
     return features, labels
 
 
 def pre_processing():
-
+    """
+    数据预处理 ，此处我们只对数据进行归一化
+    """
     return
 
 
 def core_training(training_set, training_labels, count_neighbor):
+    """
+    由于KNN算法没有训练的过程(也就是不能给出数据内在的含义)，
+    所以我们直接将训练样本和训练标签作为训练模型的参数来使用。与其说KNN是算法，不如说是方法(Function)
+    :param training_set: 训练数据集
+    :param training_labels: 训练数据集对应的标签
+    :param count_neighbor: 选取作为判断的邻居数目
+    :return:
+    """
     result_model = KnnModel(training_set, training_labels, count_neighbor)
     return result_model
 
 
 def predict(model_knn, feature_vector_input):
+    """
+
+    :param model_knn:
+    :param feature_vector_input:
+    :return:
+    """
     model_knn.predict(feature_vector_input)
     return
-sample_set, sample_labels = create_sample()
-k = 3
-knnPreModel = core_training(sample_set, sample_labels, k)
-testX = np.array([0.1, 0.3])
-outputLabel = knnPreModel.predict(testX)
-print(outputLabel)
+
+
+if __name__ == "__main__":
+    sample_set, sample_labels = create_sample()
+    k = 3
+    knnPreModel = core_training(sample_set, sample_labels, k)
+    testX = np.array([0.1, 0.3])
+    outputLabel = knnPreModel.predict(testX)
+    print(outputLabel)
